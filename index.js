@@ -1,8 +1,6 @@
 const zip = window.zip = require('zipjs-browserify');
 require('./lib/zip-fs');
 
-const RE_GLTF = /\.(gltf|glb)$/;
-
 /**
  * Watches an element for file drops, parses to create a filemap hierarchy,
  * and emits the result.
@@ -84,7 +82,8 @@ class SimpleDropzone {
         .map((item) => item.webkitGetAsEntry());
     } else if ((e.dataTransfer.files||[]).length === 1) {
       const file = e.dataTransfer.files[0];
-      if (file.type === 'application/zip') {
+      if (file.type === 'application/
+          ') {
         this._loadZip(file);
         return;
       } else {
